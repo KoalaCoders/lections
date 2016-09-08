@@ -69,6 +69,9 @@ controls: true
 `$ git push origin *brach*`
 
 --
+## Update branch
+`$ git pull origin #branch*`
+--
 ## Flow
 ```
 // on master branch
