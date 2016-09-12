@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>Lections | KoalaCoders</title>
+</head>
+<body>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Roboto';
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0db4f;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+
+    }
+    a, a:hover, a:focus, a:visited  {
+      color: #333;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      text-decoration: none;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 50px;
+    }
+
+    .js-bg {
+      position: fixed;
+      bottom: -300px;
+      right: -30px;
+      font-size: 1200px;
+      font-weight: 900;
+      opacity: .1;
+      z-index: 0;
+    }
+
+    .grid {
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 75vw;
+      margin: 50px auto;
+    }
+
+
+
+    .grid-item {
+      display: block;
+      z-index: 10;
+      flex-basis: 25vw;
+      height: 25vw;
+      flex-grow: 0;
+      flex-shrink: 0;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background-size .2s, font-size .2s;
+      background-size: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      text-align: center;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .grid-item.js {
+      background-size: 45%;
+    }
+
+    .grid-item:hover {
+      background-size: 80%;
+    }
+
+  </style>
+  <h1 class="title">Lections</h1>
+  <div class="js-bg">JS</div>
+  <div class="grid">
+    <a
+      class="grid-item js"
+      style="background-image: url('./images/js.png');"
+      href="https://koalacoders.github.io/lections/javascript"
+    ></a>
+    <a
+      class="grid-item"
+      style="background-image: url('./images/html.png') "
+      href="#"
+    ></a>
+    <a
+      class="grid-item"
+      style="background-image: url('./images/css.png') "
+      href="#"
+    ></a>
+    <a
+      class="grid-item"
+      style="background-image: url('./git/git.png') "
+      href="https://koalacoders.github.io/lections/git"
+    ></a>
+  </div>
+</body>
+</html>
