@@ -2,7 +2,7 @@ title: Git
 author:
   name: Koala
   url: https://github.com/KoalaCoders
-output: index.html
+output: ./git/index.html
 style: style.css
 theme: sudodoki/reveal-cleaver-theme
 controls: true

@@ -1,10 +1,3 @@
-# Lections
-* [html/css](./html-css/html-css.md)
-* [jQuery](./jquery/jquery.md)
-* [JavaScipt](./javasript/javasript.md)
-* [Build tools(grunt/gulp/webpack)](./build-tools/build-tools.md)
-* [React](./react/react.md)
-* [Angular 1](./angular/angular-1/angular-1.md)
-* [Angular 2](./angular/angular-2/angular-2.md)
-* [Ext.js](./ext-js/ext-js.md)
-* [Node.js](./node-js/node-js.md)
+### To build html files
+<br>
+`$ sh build.sh`
