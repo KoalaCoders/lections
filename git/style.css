@@ -1,0 +1,31 @@
+.gitLink {
+  flex-basis: 30%;
+  width: 30%;
+  display: inline-block;
+}
+
+.slides .gitImage {
+  display: block;
+  width: 100%;
+}
+
+.slides .gitImage,  .slides .gitLink {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  /*margin: 20px auto;
+  height: 100px;*/
+}
+.slides .gitImage:hover, .slides .gitLink:hover {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  /*margin: 20px auto;
+  height: 100px;*/
+}
+
+.slides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
