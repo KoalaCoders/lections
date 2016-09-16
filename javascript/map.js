@@ -21,11 +21,12 @@ function mapArray(arr, callback) {
   return mappedArray;
 };
 
-// map([1, 2, 3, 4], (a) => a++);
+// mapArray([1, 2, 3, 4], (a) => a++); 
+// => [2, 3, 4, 5]
 
 function map(obj, callback) {
 
-  if (!obj ) {
+  if (!obj && (typeof obj !== 'object')) {
     console.error('Invalid data');
     return null;
   }
@@ -35,24 +36,16 @@ function map(obj, callback) {
      return obj;
   }
   
-  if (Array.isArray(obj)) {
-    const len = arr.length;
-  
-    let mappedArray = new Array(len);
-  
-    for(let i = 0; i < len; i++) {
-      mappedArray[i] = callback(obj[i]);
-    }
+  let mappedObj = Array.isArray(obj) ? [obj.length] : {};
 
-    return mappedArray;
-  } else {
-    let mappedObj = {};
-
-    for (key in obj) {
-      mappedObj[key] = callback(obj[key]);
-    }
-    
-    return mappedObj;
+  for (key in obj) {
+    mappedObj[key] = callback(obj[key]);
   }
-  
+    
+  return mappedObj;
 };
+
+// console.log(map({a: 1, b: 5}, (a) => ++a));
+// => {a: 2, b: 6}
+// console.log(map([1, 5], (a) => ++a));
+// => [2, 6]
