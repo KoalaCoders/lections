@@ -61,7 +61,7 @@ controls: true
 
 --
 ## Combo!
-`$ git commit -a -m '*commit message'`
+`$ git commit -a -m '*commit message*'`
 
 --
 ## Push to remote
@@ -70,7 +70,7 @@ controls: true
 
 --
 ## Update branch
-`$ git pull origin #branch*`
+`$ git pull origin *branch*`
 --
 ## Flow
 ```
