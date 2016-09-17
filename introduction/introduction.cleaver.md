@@ -66,4 +66,4 @@ jobs.dou.ua
 <img width="500px" class="gitImage image" src="./spa.png">
 
 --
-<a href='https://coggle.it/diagram/Vz9LvW8byvN0I38x'>123</a>
+<a href='https://coggle.it/diagram/Vz9LvW8byvN0I38x'>Link (lol)</a>
