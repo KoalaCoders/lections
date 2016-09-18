@@ -1,3 +1,2 @@
-### To build html files
-<br>
-`$ sh build.sh`
+# Lections
+[+ Git](./git/README.md)
