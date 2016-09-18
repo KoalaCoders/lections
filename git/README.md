@@ -52,7 +52,7 @@ Then paste in console
 git remote add origin https://github.com/*username*/Git.git
 git push -u origin master
 ```
-![](./img/gitpush.png)
+![](./img/gitPush.png)
 
 Let's check github
 
