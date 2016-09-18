@@ -2,6 +2,7 @@
 ## Install git
 * Linux `$ yum install git-core` or `$ apt-get install git`
 * Windows [http://msysgit.github.com/](http://msysgit.github.com/)
+
 ## Init project
 ```git
 $ git init
