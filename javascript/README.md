@@ -47,5 +47,5 @@ let default = {
 }
 
 fallback(obj, default);
-// => { id: 1, info: { name: 'Alex', surname: 'default surname', age: 22 }, description: 'default description' }
+// => { id: 2, info: { name: 'Alex', surname: 'default surname', age: 22 }, description: 'default description' }
 ```
