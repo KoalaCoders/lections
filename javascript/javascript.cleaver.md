@@ -3,6 +3,7 @@ author:
   name: Koala
   url: https://github.com/KoalaCoders
 output: ./javascript/index.html
+theme: IgorMotorny/cleaver-koala
 style: style.css
 controls: true
 
