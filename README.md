@@ -1,2 +1,2 @@
 # Lections
-[+ Git](./git/README.md)
+* [Git](./git/README.md)
