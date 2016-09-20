@@ -1,0 +1,17 @@
+.div {
+  height: 100px;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(80,114,182,.4);
+}
+
+.span {
+  width: 25vw;
+  height: 100px;
+  background: rgba(240,219,79,.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
