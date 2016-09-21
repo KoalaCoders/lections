@@ -47,6 +47,46 @@ controls: true
 ```
 </div>
 --
-
+# Common tags
 --
-![](./img/block-model.png)
+## Block
+<div class="big">
+```
+  <div></div>
+```
+</div>
+--
+## Inline element
+<div class="big">
+```
+  <span></span>
+```
+</div>
+--
+## Paragraph
+<div class="big">
+```
+  <p></p>
+```
+</div>
+--
+## Image
+<div class="big">
+```
+  <img src="image-path">
+```
+</div>
+--
+## Line wrap
+<div class="big">
+```
+<br>
+```
+</div>
+--
+<div class="page">
+  <header>`<header></header>`</header>
+  <main>`<main></main>`</main>
+  <aside>`<aside></aside>`</aside>
+  <footer>`<footer></footer>`</footer>
+</div>
