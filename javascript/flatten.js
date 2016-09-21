@@ -4,7 +4,7 @@ function flatten(arr) {
   let res = [];
 
   arr.forEach((el) => {
-    res = res.concat((Array.isArray(el)) ? el : flatten(el))
+    res = res.concat((Array.isArray(el)) ? flatten(el) : el)
   });
   
   return res;
