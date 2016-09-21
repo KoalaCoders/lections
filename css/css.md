@@ -3,7 +3,9 @@ author:
   name: Koala
   url: https://github.com/KoalaCoders
 output: ./css/index.html
-theme: sudodoki/reveal-cleaver-theme
+theme: IgorMotorny/cleaver-koala
 controls: true
 
+--
+# css
 --
