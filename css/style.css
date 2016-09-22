@@ -1,0 +1,9 @@
+.code {
+  background-color: rgba(75, 187, 250, .2);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+li {
+  margin: 10px 0;
+}

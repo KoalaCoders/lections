@@ -462,10 +462,19 @@ pre {
   border-left-width: 50px;
   border-right-width: 0;
 }
-/*
-* Copyright (c) highlightjs.org railscasts theme
-*/
+
+/*! Copyright (c) highlight.js v9.7.0 | BSD3 License | git.io/hljslicense */
 .hljs{display:block;overflow-x:auto;padding:0.5em;background:#232323;color:#e6e1dc}.hljs-comment,.hljs-quote{color:#bc9458;font-style:italic}.hljs-keyword,.hljs-selector-tag{color:#c26230}.hljs-string,.hljs-number,.hljs-regexp,.hljs-variable,.hljs-template-variable{color:#a5c261}.hljs-subst{color:#519f50}.hljs-tag,.hljs-name{color:#e8bf6a}.hljs-type{color:#da4939}.hljs-symbol,.hljs-bullet,.hljs-built_in,.hljs-builtin-name,.hljs-attr,.hljs-link{color:#6d9cbe}.hljs-params{color:#d0d0ff}.hljs-attribute{color:#cda869}.hljs-meta{color:#9b859d}.hljs-title,.hljs-section{color:#ffc66d}.hljs-addition{background-color:#144212;color:#e6e1dc;display:inline-block;width:100%}.hljs-deletion{background-color:#600;color:#e6e1dc;display:inline-block;width:100%}.hljs-selector-class{color:#9b703f}.hljs-selector-id{color:#8b98ab}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
+
+.code {
+  background-color: rgba(75, 187, 250, .2);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+li {
+  margin: 10px 0;
+}
 
   </style>
 </head>
@@ -479,9 +488,180 @@ pre {
 </section>
   </div>
   <div class="slide hidden" id="slide-2">
-    <section class="slide-content"></section>
+    <section class="slide-content"><h2 id="inline">Inline</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">tag</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"prop: value; prop: value;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tag</span>&gt;</span></code></pre>
+</section>
   </div>
-  <div class="slide hidden author-slide" id="slide-3">
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h2 id="internal">Internal</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.selector</span> {
+    <span class="hljs-attribute">prop</span>: value;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h2 id="external">External</h2>
+<h4 id="html-file">Html file</h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"path/to/file.css"</span> &gt;</span></code></pre>
+<h4 id="css-file">Css file</h4>
+<pre><code class="lang-css"><span class="hljs-selector-class">.selector</span> {
+  <span class="hljs-attribute">prop</span>: value;
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><pre><code class="lang-css"><span class="hljs-selector-tag">tag</span> { }
+
+<span class="hljs-selector-class">.class</span> { }
+
+<span class="hljs-selector-id">#id</span> { }
+
+<span class="hljs-selector-attr">[attribute="value"]</span> { }
+
+* { }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h2 id="text">Text</h2>
+<ul>
+<li>text-align: <code class="code"> left | center | right | justify </code></li>
+<li>color: <code class="code">#RRGGBB | rgb(R, G, B) | rgba(R, G, B, A) </code></li>
+<li>text-transform: <code class="code">uppercase | uppercase | capitalize</code></li>
+<li>text-decoration: <code class="code">none|underline|overline|line-through</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h2 id="element-positioning">Element positioning</h2>
+<ul>
+<li>display: <code class="code">block | inline-block | flex | inline-flex</code></li>
+<li>float:  <code class="code">left | right | none</code></li>
+<li>position:  <code class="code">relative | absolute | fixed</code></li>
+<li>z-index:  <code class="code">value</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><p><img src="./img/block-model.png" alt=""></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h2 id="element-styling">Element styling</h2>
+<ul>
+<li>background: <code class="code"> #RRGGBB | url(&#39;path&#39;)</code></li>
+<li>background-repeat: <code class="code"> center | value </code></li>
+<li>background-size: <code class="code">cover | contain | value</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h2 id="pseudo-classes">Pseudo classes</h2>
+<pre><code class="lang-css"><span class="hljs-selector-tag">all</span><span class="hljs-selector-pseudo">:hover</span> { }
+
+<span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span> { }
+
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span> { }
+<span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:focus</span> { }
+
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:nth-child()</span> { }
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first-child</span> { }
+<span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span> { }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h2 id="pseudo-elements">Pseudo elements</h2>
+<pre><code class="lang-css"><span class="hljs-selector-class">.selector</span><span class="hljs-selector-pseudo">:before</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">""</span>;
+}
+
+<span class="hljs-selector-class">.selector</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">content</span>: <span class="hljs-built_in">url</span>();
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h1 id="animation">Animation</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h2 id="transition">Transition</h2>
+<ul>
+<li><code class="code">transition-property</code></li>
+<li><code class="code">transition-duration</code></li>
+<li><code class="code">transition-timing-function</code></li>
+<li><code class="code">transition-delay</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h2 id="-keyframes">@keyframes</h2>
+<pre><code class="lang-css">@<span class="hljs-keyword">keyframes</span> jump {
+    0%   {<span class="hljs-attribute">top</span>: <span class="hljs-number">0px</span>;}
+    25%  {<span class="hljs-attribute">top</span>: <span class="hljs-number">200px</span>;}
+    50%  {<span class="hljs-attribute">top</span>: <span class="hljs-number">100px</span>;}
+    75%  {<span class="hljs-attribute">top</span>: <span class="hljs-number">200px</span>;}
+    100% {<span class="hljs-attribute">top</span>: <span class="hljs-number">0px</span>;}
+}
+
+@<span class="hljs-keyword">keyframes</span> top {
+    <span class="hljs-selector-tag">from</span> {<span class="hljs-attribute">top</span>: <span class="hljs-number">0px</span>;}
+    <span class="hljs-selector-tag">to</span> {<span class="hljs-attribute">top</span>: <span class="hljs-number">200px</span>;}
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><pre><code class="lang-css"><span class="hljs-selector-class">.selector</span> {
+   <span class="hljs-attribute">animation</span>: name <span class="hljs-built_in">time</span> (number | infinite);
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h1 id="layout">Layout</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><pre><code class="lang-css">@<span class="hljs-keyword">media</span> (min-width: value) { }
+@<span class="hljs-keyword">media</span> (max-width: value) { }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h2 id="float">Float</h2>
+<p><a href="http://codepen.io/Motorny/pen/ORWErO">Tap to open</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h2 id="flex">Flex</h2>
+<p><a href="http://codepen.io/Motorny/pen/bwgrJY">Tap to open</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="css-preprocessors">CSS PREPROCESSORS</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h2 id="less">Less</h2>
+<h2 id="sass">Sass</h2>
+<h2 id="scss">Scss</h2>
+<h2 id="stylus">Stylus</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><p><a href="http://codepen.io/Motorny/pen/dpNKqR">Tap to open</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h1 id="bem">BEM</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><pre><code class="lang-css"><span class="hljs-selector-class">.block</span> { }
+<span class="hljs-selector-class">.block__element</span> { }
+<span class="hljs-selector-class">.block__element--modifier</span> { }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-25">
     <section class="slide-content"><div class="author">
   <h1 class="name">Koala</h1>
     <h3 class="url">
@@ -648,6 +828,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+function higlight(selector, color = "rgba(255, 255, 255, .5)") {
+  if (window.koalaHiglighted) {
+    window.koalaHiglighted.forEach(el => {
+      el.style.background = ""
+    });
+  }
+  window.koalaHiglighted = Array.from(document.querySelectorAll(selector));
+  window.koalaHiglighted.forEach(el => {
+    el.style.background = color;
+  });
+}
 
   </script>
 </body>
