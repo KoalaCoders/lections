@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <div class="root" id="root">
+    <div class="item">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="item">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+
+  <style>
+    div {
+      background: rgba(0, 0, 0, .2);
+      padding: 50px;
+      margin: 10px;
+    }
+
+    .box {
+      display: inline-block;
+      width: 20%;
+      height: 100%;
+    }
+    .active {
+      background-color: green;
+    }
+  </style>
+
+  <script>
+    function onClick(el) {
+      if (el == document.body) return;
+
+      if (el.classList.contains('item')) {
+        el.classList.add('active');
+        setTimeout(() => { el.classList.remove('active') }, 1000)
+        return;
+      } else onClick(el.parentElement);
+    }
+
+    document.getElementById('root').onclick = (e) => onClick(e.target)
+  </script>
+</body>
+</html>
