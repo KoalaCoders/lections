@@ -462,9 +462,8 @@ pre {
   border-left-width: 50px;
   border-right-width: 0;
 }
-/*
-* Copyright (c) highlightjs.org railscasts theme
-*/
+
+/*! Copyright (c) highlight.js v9.7.0 | BSD3 License | git.io/hljslicense */
 .hljs{display:block;overflow-x:auto;padding:0.5em;background:#232323;color:#e6e1dc}.hljs-comment,.hljs-quote{color:#bc9458;font-style:italic}.hljs-keyword,.hljs-selector-tag{color:#c26230}.hljs-string,.hljs-number,.hljs-regexp,.hljs-variable,.hljs-template-variable{color:#a5c261}.hljs-subst{color:#519f50}.hljs-tag,.hljs-name{color:#e8bf6a}.hljs-type{color:#da4939}.hljs-symbol,.hljs-bullet,.hljs-built_in,.hljs-builtin-name,.hljs-attr,.hljs-link{color:#6d9cbe}.hljs-params{color:#d0d0ff}.hljs-attribute{color:#cda869}.hljs-meta{color:#9b859d}.hljs-title,.hljs-section{color:#ffc66d}.hljs-addition{background-color:#144212;color:#e6e1dc;display:inline-block;width:100%}.hljs-deletion{background-color:#600;color:#e6e1dc;display:inline-block;width:100%}.hljs-selector-class{color:#9b703f}.hljs-selector-id{color:#8b98ab}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
 
 .div {
@@ -597,35 +596,52 @@ pre {
   </div>
   <div class="slide hidden" id="slide-6">
     <section class="slide-content"><h2 id="block">Block</h2>
-<div class="big">
-<code>&lt;div&gt;&lt;/div&gt;</code>
-</div></section>
+<p><code class="big"></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<p></code></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-7">
     <section class="slide-content"><h2 id="inline-element">Inline element</h2>
-<div class="big">
-<code>&lt;span&gt;&lt;/span&gt;</code>
-</div></section>
+<p><code class="big"></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre>
+<p></code></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-8">
-    <section class="slide-content"><h2 id="paragraph">Paragraph</h2>
-<div class="big">
-<code>&lt;p&gt;&lt;/p&gt;</code>
-</div></section>
+    <section class="slide-content"><h2 id="title">Title</h2>
+<p><code class="big"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span></code></pre>
+<p></code></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-9">
-    <section class="slide-content"><h2 id="image">Image</h2>
-<div class="big">
-<code>&lt;img src=&quot;image-path&quot;&gt;</code>
-</div></section>
+    <section class="slide-content"><h2 id="paragraph">Paragraph</h2>
+<p><code class="big"></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre>
+<p></code></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-10">
-    <section class="slide-content"><h2 id="line-wrap">Line wrap</h2>
-<div class="big">
-<code>&lt;br&gt;</code>
-</div></section>
+    <section class="slide-content"><h2 id="image">Image</h2>
+<p><code class="big"></p>
+<pre><code class="lang-html">  <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image-path"</span>&gt;</span></code></pre>
+<p></code></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h2 id="line-wrap">Line wrap</h2>
+<p><code class="big"></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></code></pre>
+<p></code></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
     <section class="slide-content"><div class="page">
   <header><code>&lt;header&gt;&lt;/header&gt;</code></header>
   <main><code>&lt;main&gt;&lt;/main&gt;</code></main>
@@ -633,7 +649,23 @@ pre {
   <footer><code>&lt;footer&gt;&lt;/footer&gt;</code></footer>
 </div></section>
   </div>
-  <div class="slide hidden author-slide" id="slide-12">
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">async</span> <span class="hljs-attr">defer</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script2.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-14">
     <section class="slide-content"><div class="author">
   <h1 class="name">Koala</h1>
     <h3 class="url">
@@ -800,6 +832,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+function higlight(selector, color = "rgba(255, 255, 255, .5)") {
+  if (window.koalaHiglighted) {
+    window.koalaHiglighted.forEach(el => {
+      el.style.background = ""
+    });
+  }
+  window.koalaHiglighted = Array.from(document.querySelectorAll(selector));
+  window.koalaHiglighted.forEach(el => {
+    el.style.background = color;
+  });
+}
 
   </script>
 </body>
