@@ -358,6 +358,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
+/*
+  $light: #ddd
+  $middle: #4BBBFA rgba(75, 187, 250, 1)
+  $dark: #222
+*/
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #ddd;
@@ -369,10 +375,14 @@ h1 {
   text-transform: uppercase;
   text-align: center;
   margin: 20px 0;
+  font-size: 120px;
 }
 
 h2 {
+  color: #4BBBFA;
+  font-size: 60px;
   font-weight: 900;
+  text-align: center;
 }
 
 h3 {
@@ -416,7 +426,7 @@ img {
 }
 
 .progress-bar {
-  background-color: rgba(114,197,224, .9);
+  background-color: rgba(75, 187, 250, .9);
   transition: .3s;
   height: 5px;
 }
@@ -429,9 +439,31 @@ pre {
   font-size: 90%;
 }
 
-/*
-* Copyright (c) highlightjs.org railscasts theme
-*/
+.arrow {
+  border: 30px solid rgba(75, 187, 250, .2);
+}
+
+.arrow:hover {
+  border: 30px solid rgba(75, 187, 250, .8);
+}
+
+.prev, .prev:hover {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-left-width: 0;
+  border-right-width: 50px;
+}
+
+.next, .next:hover {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-left-width: 50px;
+  border-right-width: 0;
+}
+
+/*! Copyright (c) highlight.js v9.7.0 | BSD3 License | git.io/hljslicense */
 .hljs{display:block;overflow-x:auto;padding:0.5em;background:#232323;color:#e6e1dc}.hljs-comment,.hljs-quote{color:#bc9458;font-style:italic}.hljs-keyword,.hljs-selector-tag{color:#c26230}.hljs-string,.hljs-number,.hljs-regexp,.hljs-variable,.hljs-template-variable{color:#a5c261}.hljs-subst{color:#519f50}.hljs-tag,.hljs-name{color:#e8bf6a}.hljs-type{color:#da4939}.hljs-symbol,.hljs-bullet,.hljs-built_in,.hljs-builtin-name,.hljs-attr,.hljs-link{color:#6d9cbe}.hljs-params{color:#d0d0ff}.hljs-attribute{color:#cda869}.hljs-meta{color:#9b859d}.hljs-title,.hljs-section{color:#ffc66d}.hljs-addition{background-color:#144212;color:#e6e1dc;display:inline-block;width:100%}.hljs-deletion{background-color:#600;color:#e6e1dc;display:inline-block;width:100%}.hljs-selector-class{color:#9b703f}.hljs-selector-id{color:#8b98ab}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}.hljs-link{text-decoration:underline}
 
 .gitLink {
@@ -715,6 +747,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+function higlight(selector, color = "rgba(255, 255, 255, .5)") {
+  if (window.koalaHiglighted) {
+    window.koalaHiglighted.forEach(el => {
+      el.style.background = ""
+    });
+  }
+  window.koalaHiglighted = Array.from(document.querySelectorAll(selector));
+  window.koalaHiglighted.forEach(el => {
+    el.style.background = color;
+  });
+}
 
   </script>
 </body>

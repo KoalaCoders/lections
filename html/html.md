@@ -89,6 +89,13 @@ controls: true
 ```
 </code>
 --
+## Link
+<code class="big">
+```html
+  <a href="#"></a>
+```
+</code>
+--
 ## Line wrap
 <code class="big">
 ```html
