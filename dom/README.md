@@ -1,20 +1,21 @@
 # JavaScript & JQuery DOM manipulation
 ## Create DOM node
 
-<table>
-<th>
-  <td>JavaScript</td>
-  <td>JQuery</td>
-</th>
+|  html | JavaScript | JQuery  |
+|     :---:    |     :---:      |     :---:     |
+| `<div class="className"></div>`   | `let div = document.createElement('div');` <br> `div.class = 'className';`   | `$('<div/>', { class: 'className'})`  |
+| git diff     | git diff       | git diff      |
 
-<tr>
-<td>`<div class="className"></div>`</td>
-<td>let div = document.createElement('div'); <br> div.class = 'className';</td>
-<td>$('<div/>', { class: 'className'})</td>
-</tr>
-</table>
 
 ## Get DOM element
+
+
+|  html | JavaScript | JQuery  |
+|     :---:    |     :---:      |     :---:     |
+|`<div id="elementId"></div>`| `document.getElementById('elementId')`   | `$('#elementId')`  |
+| `<span></span>`|`document.getElementsByTagName('span')`| git diff      |
+
+
 <table>
 <th>
   <td>JavaScript</td>
