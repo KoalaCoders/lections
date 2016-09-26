@@ -2,7 +2,7 @@
 ## Create DOM node
 
 |  html | JavaScript | JQuery  |
-|     :---:    |     :---:      |     :---:     |
+|     :---   |     :---    |     :---    |
 | `<div class="className"></div>`   | `let div = document.createElement('div');` <br> `div.class = 'className';`   | `$('<div/>', { class: 'className'})`  |
 | git diff     | git diff       | git diff      |
 
@@ -11,7 +11,7 @@
 
 
 |  html | JavaScript | JQuery  |
-|     :---:    |     :---:      |     :---:     |
+|     :------------------    |     :-------------------------     |     :--------------    |
 |`<div id="elementId"></div>`| `document.getElementById('elementId')`   | `$('#elementId')`  |
 | `<span></span>`|`document.getElementsByTagName('span')`| `$('span')` |
 | `<div class="className"></div>`|`document.getElementsByClassName('className')`| `$('.className')` |
