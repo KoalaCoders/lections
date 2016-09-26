@@ -4,7 +4,6 @@
 |  html | JavaScript | JQuery  |
 |     :---   |     :---    |     :---    |
 | `<div class="className"></div>`   | `let div = document.createElement('div');` <br> `div.class = 'className';`   | `$('<div/>', { class: 'className'})`  |
-| git diff     | git diff       | git diff      |
 
 
 ## Get DOM element
