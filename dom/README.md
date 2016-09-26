@@ -13,46 +13,10 @@
 |  html | JavaScript | JQuery  |
 |     :---:    |     :---:      |     :---:     |
 |`<div id="elementId"></div>`| `document.getElementById('elementId')`   | `$('#elementId')`  |
-| `<span></span>`|`document.getElementsByTagName('span')`| git diff      |
-
-
-<table>
-<th>
-  <td>JavaScript</td>
-  <td>JQuery</td>
-</th>
-
-<tr>
-<td>```<div id="elementId"></div>```</td>
-<td>document.getElementById('elementId')</td>
-<td> $('#elementId')</td>
-</tr>
-
-<tr>
-<td>`<span></span>`</td>
-<td>document.getElementsByTagName('span')</td>
-<td>$('span')</td>
-</tr>
-
-<tr>
-<td>`<div class="className"></div>`</td>
-<td>document.getElementsByClassName('className')</td>
-<td>$('.className')</td>
-</tr>
-
-<tr>
-<td>`<div id="elementId"></div>`</td>
-<td>document.querySelectorAll('div')<br>   document.querySelectorAll('.className') <br> document.querySelectorAll('#elementId')</td>
-<td>$('div') <br> $('.className') <br> $('#elementId')</td>
-</tr>
-
-<tr>
-<td>`<div><span class="className"></span><div>`</td>
-<td>el.querySelectorAll('.className')</td>
-<td>$(el).find('.className')</td>
-</tr>
-
-</table>
+| `<span></span>`|`document.getElementsByTagName('span')`| `$('span')` |
+| `<div class="className"></div>`|`document.getElementsByClassName('className')`| `$('.className')` |
+| `<div id="elementId"></div>`|`document.querySelectorAll('div')` <br> `document.querySelectorAll('.className')` <br> `document.querySelectorAll('#elementId')`| `$('div')` <br> `$('.className')` <br> `$('#elementId')` |
+| `<div><span class="className"></span><div>`|`el.querySelectorAll('.className')`| `$(el).find('.className')` |
 
 ## Add/remove DOM node
 
