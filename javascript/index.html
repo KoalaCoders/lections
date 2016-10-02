@@ -477,7 +477,7 @@ pre code {
     <div class="progress-bar"></div>
   </div>
 
-  <div class="slide" id="slide-1">
+  <div class="slide " id="slide-1">
     <section class="slide-content"><h3 id="data-types">Data types</h3>
 <pre><code class="lang-js"><span class="hljs-keyword">typeof</span> <span class="hljs-literal">undefined</span> <span class="hljs-comment">// "undefined"</span>
 
@@ -496,14 +496,14 @@ pre code {
 <span class="hljs-keyword">typeof</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{} <span class="hljs-comment">// "function"</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-2">
+  <div class="slide hidden " id="slide-2">
     <section class="slide-content"><h3 id="variables">Variables</h3>
 <pre><code class="lang-js"><span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
 <span class="hljs-keyword">let</span> b = <span class="hljs-string">'str'</span>;
 <span class="hljs-keyword">const</span> c = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-3">
+  <div class="slide hidden " id="slide-3">
     <section class="slide-content"><h3 id="boolean">Boolean</h3>
 <pre><code class="lang-js"><span class="hljs-literal">false</span> == <span class="hljs-literal">false</span>; <span class="hljs-comment">// true</span>
 <span class="hljs-literal">null</span> == <span class="hljs-literal">false</span>; <span class="hljs-comment">// true</span>
@@ -516,7 +516,7 @@ pre code {
 <span class="hljs-literal">null</span> === <span class="hljs-literal">false</span>; <span class="hljs-comment">// false</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-4">
+  <div class="slide hidden " id="slide-4">
     <section class="slide-content"><h3 id="functions">Functions</h3>
 <pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>{
   <span class="hljs-keyword">return</span> a + b;
@@ -528,7 +528,7 @@ add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>); <sp
 addTwo(<span class="hljs-number">1</span>); <span class="hljs-comment">// 3</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-5">
+  <div class="slide hidden " id="slide-5">
     <section class="slide-content"><h3 id="classes">Classes</h3>
 <pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
   <span class="hljs-keyword">constructor</span>(firstName) {
@@ -549,7 +549,7 @@ addTwo(<span class="hljs-number">1</span>); <span class="hljs-comment">// 3</spa
 };</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-6">
+  <div class="slide hidden " id="slide-6">
     <section class="slide-content"><h3 id="object">Object</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>(); <span class="hljs-comment">// =&gt; {}</span>
 {}; <span class="hljs-comment">// =&gt; {}</span>
@@ -559,7 +559,7 @@ obj.a; <span class="hljs-comment">// =&gt; 'b'</span>
 obj[<span class="hljs-string">'a'</span>]; <span class="hljs-comment">// =&gt; 'b'</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-7">
+  <div class="slide hidden " id="slide-7">
     <section class="slide-content"><h3 id="object">Object</h3>
 <pre><code class="lang-js"><span class="hljs-keyword">let</span> obj = {a: <span class="hljs-string">'b'</span>, b: <span class="hljs-string">'a'</span>};
 <span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> obj) {
@@ -569,7 +569,7 @@ obj[<span class="hljs-string">'a'</span>]; <span class="hljs-comment">// =&gt; '
 }</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-8">
+  <div class="slide hidden " id="slide-8">
     <section class="slide-content"><h3 id="array">Array</h3>
 <pre><code class="lang-javascript">[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"string"</span>, {key: <span class="hljs-string">'value'</span>}] <span class="hljs-comment">// =&gt; [1, 2, "string", {key: 'value'}]</span>
 
@@ -578,7 +578,7 @@ obj[<span class="hljs-string">'a'</span>]; <span class="hljs-comment">// =&gt; '
 <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">4</span>), <span class="hljs-comment">// =&gt; [undefined, undefined, undefined, undefined]</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-9">
+  <div class="slide hidden " id="slide-9">
     <section class="slide-content"><h3 id="array">Array</h3>
 <pre><code class="lang-js"><span class="hljs-string">'1, 2, 3, 4'</span>.split(<span class="hljs-string">', '</span>); <span class="hljs-comment">// =&gt; ['1', '2', '3', '4']</span>
 [<span class="hljs-string">'1'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'3'</span>, <span class="hljs-string">'4'</span>].join(<span class="hljs-string">' '</span>); <span class="hljs-comment">// =&gt; '1 2 3 4'</span>
@@ -591,7 +591,7 @@ arr; <span class="hljs-comment">// =&gt; [1, 4];</span>
 [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>].reverse(); <span class="hljs-comment">// =&gt; [4, 3, 2, 1]</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-10">
+  <div class="slide hidden " id="slide-10">
     <section class="slide-content"><h3 id="-onditional-statements">Сonditional statements</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">let</span> a = <span class="hljs-number">100</span>;
 
@@ -604,7 +604,7 @@ arr; <span class="hljs-comment">// =&gt; [1, 4];</span>
 <span class="hljs-built_in">console</span>.log( a &gt;= <span class="hljs-number">10</span> ? <span class="hljs-string">'a &gt;= 10'</span> : <span class="hljs-string">'a &lt; 10'</span> )</code></pre>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden " id="slide-11">
     <section class="slide-content"><h3 id="loop">Loop</h3>
 <pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
   <span class="hljs-built_in">console</span>.log(i);
