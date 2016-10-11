@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" id="theme" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night.min.css">-->
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Quick Tasks</h1>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
+        </section>
+        <section>
+            <section>
+                <h1>Data creator</h1>
+                <p>Create a class, which should organize your data</p>
+                <p>You will probably need it when you will save your data from components to some kind of
+                    <code>Store</code> or receiving/sending them to Server</p>
+                <pre><code>
+                        class Data {
+                          constructor(enityName) {
+                            this.name = enityName;
+                          }
+                        }
+                    </code></pre>
+            </section>
+            <section>
+                <p>Now create a method of this <mark>class</mark> called <code>formData</code></p>
+                <p>It should get one parameter (if there is none, there should be an <mark>default</mark> one (use your fantasy)) and
+                    <code>return an <mark>object</mark></code></p>
+                <pre>
+                    <code>
+                        class Data {
+                          /*
+                          *
+                          */
+                          methodName - returns: {
+                            name: enityName
+                            data: [param]
+                          }
+                        }
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre><code>
+class Data {
+    constructor(enityName) {
+        this.name = enityName;
+    }
+    formData(data = `${this.name} has no data`){
+        return {
+            name: this.name,
+            data: [data]
+        }
+    }
+}
+                </code></pre>
+            </section>
+            <section>
+                <h1>Well done!</h1>
+                <h3>Now let's create another method</h3>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Task 2</h1>
+                <p>We will use this class again</p>
+                <pre><code>
+                    class Data {
+                      constructor(enityName) {
+                        this.name = enityName;
+                      }
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <p>Create a method of this <mark>class</mark> called <code>parseData</code></p>
+                <p>It should get one parameter as our data (if there is none, then <code>return <mark>null</mark></code>) and
+                    <code>return an <mark>array</mark> of data</code></p>
+                <p>Also, if the name of data doesn't match with the <code>enityName</code>, then return <mark>null</mark></p>
+                <pre>
+                    <code>
+class Data {
+    /*
+    * Gets: {
+            name: enityName,
+            data: [data]
+        }
+    */
+    methodName - returns: [data] || null
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code>
+parseData(object){
+    let data;
+
+    if (object && object.name === this.name) {
+        data = object.data;
+
+        return Array.isArray(data) ? data : [data];
+    } else return null;
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h1>Well done!</h1>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Task 3</h1>
+                <p>Let's check whether the parsed value was new or was the same</p>
+                <p>Create a new method for this and modify the previous one</p>
+            </section>
+            <section>
+                <p>Create a method called <code>checker</code></p>
+                <p>It should get one parameter as our data (if there is none, then <code>return <mark>false</mark></code>) and
+                    check(<mark>true</mark>/<mark>false</mark>) if our data is not the same as our previous data</p>
+                <p>Our <code>parseData</code> should return <mark>null</mark> if data is the same</p>
+                <pre>
+                    <code>
+class Data {
+    /*
+    * Gets: data
+    * Array.isArray(data) //true
+    */
+    methodName - returns: Boolean
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre><code>
+parseData(object){
+    let data;
+
+    if (object && object.name === this.name) {
+        data = object.data;
+        data = Array.isArray(data) ? data : [data];
+
+        if (!this.oldData || this.checker(data)) {
+            this.oldData = data;
+            return data;
+        }
+    }
+    return null;
+}
+checker(data) {
+    let oldData = this.oldData;
+
+    if (oldData && data && oldData.length > 0
+                    && oldData.length === data.length) {
+        for (let i = 0, length = oldData.length; i < length; i++)
+            if (data[i] !== oldData[i])
+                return true;
+
+        return false;
+    } else return false;
+}
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <h1>Whole Class Data</h1>
+            <pre style="width: 100%"><code>
+class Data {
+    constructor(enityName) {
+        this.name = enityName;
+    }
+    formData(data = `${this.name} has no data`){
+        return {
+            name: this.name,
+            data: [data]
+        }
+    }
+    parseData(object){
+        let data;
+
+        if (object && object.name === this.name) {
+            data = object.data;
+            data = Array.isArray(data) ? data : [data];
+
+            if (!this.oldData || this.checker(data)) {
+                this.oldData = data;
+                return data;
+            }
+        }
+        return null;
+    }
+    checker(data) {
+        let oldData = this.oldData;
+
+        if (oldData && data && oldData.length > 0
+                && oldData.length === data.length) {
+            for (let i = 0, length = oldData.length; i < length; i++)
+                if (data[i] !== oldData[i])
+                    return true;
+
+            return false;
+        } else return false;
+    }
+}
+            </code></pre>
+        </section>
+        <section>
+            <h1>Good work</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>

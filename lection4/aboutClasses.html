@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" id="theme" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night.min.css">-->
+
+    <!-- Printing and PDF exports -->
+    <style>
+        .reveal pre code {
+            max-height: 480px;
+        }
+    </style>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Classes</h1>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
+        </section>
+        <section>
+            <section>
+                <h1>Classes</h1>
+                <p>(Overview)</p>
+                <pre><code>class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    toString() {
+        return '(' + this.x + ', ' + this.y + ')';
+    }
+}
+
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+        super(x, y);
+        this.color = color;
+    }
+    toString() {
+        return super.toString() + ' in ' + this.color;
+    }
+}
+
+let cp = new ColorPoint(25, 8, 'green');
+cp.toString(); // '(25, 8) in green'
+
+console.log(cp instanceof ColorPoint); // true
+console.log(cp instanceof Point); // true</code></pre>
+            </section>
+            <section>
+                <h2>Why we need classes. About OOP</h2>
+            </section>
+            <section>
+                <h1>Computed method names</h1>
+                <pre><code>class Foo() {
+    myMethod() {}
+}
+
+class Foo() {
+    ['my'+'Method']() {}
+}
+
+const m = 'myMethod';
+class Foo() {
+    [m]() {}
+}</code></pre>
+            </section>
+            <section>
+                <h1>Getter example</h1>
+                <pre><code>var expr = "foo";
+
+var obj = {
+  get [expr]() { return "bar"; }
+};
+
+console.log(obj.foo); // "bar"</code></pre>
+            </section>
+            <section>
+                <h1>Setter example</h1>
+                <pre><code>var expr = "foo";
+
+var obj = {
+  baz: "bar",
+  set [expr](v) { this.baz = v; }
+};
+
+console.log(obj.baz); // "bar"
+obj.foo = "baz";      // run the setter
+console.log(obj.baz); // "baz"</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Subclassing</h1>
+                <pre><code>class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    toString() {
+        return '(' + this.x + ', ' + this.y + ')';
+    }
+}
+
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+        super(x, y); // (A)
+        this.color = color;
+    }
+    toString() {
+        return super.toString() + ' in ' + this.color; // (B)
+    }
+}</code></pre>
+            </section>
+            <section>
+                <h1>Super method</h1>
+                <pre>
+                    <code>class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    ···
+}
+
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+        super(x, y);
+        this.color = color;
+    }
+    ···
+}
+
+let cp = new ColorPoint(25, 8, 'green');</code>
+                </pre>
+            </section>
+            <section>
+                <h1>Well done!</h1>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
