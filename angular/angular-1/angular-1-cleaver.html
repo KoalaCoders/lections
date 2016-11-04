@@ -488,13 +488,12 @@ pre {
 </section>
   </div>
   <div class="slide hidden" id="slide-2">
-    <section class="slide-content"><h1 id="lector">Lector</h1>
-<h2 id="dmytro-rudnytskykh">Dmytro Rudnytskykh</h2>
+    <section class="slide-content"><h2 id="dmytro-rudnytskykh">Dmytro Rudnytskykh</h2>
 <ul>
 <li>Working at GlobalLogic</li>
 <li>3 years of experience Web Development</li>
-<li>1 year experience with AngularJS</li>
-<li>Studied KPI. Now UCU, Data Science major</li>
+<li>1-year experience with AngularJS</li>
+<li>Graduated KPI, FICT. Now studying UCU, Data Science major</li>
 </ul>
 <h2 id="-vk-https-vk-com-rudnytskykh-cv-http-rudnitskih-pp-ua-"><a href="https://vk.com/rudnytskykh">VK</a> <a href="http://rudnitskih.pp.ua">CV</a></h2>
 </section>
@@ -526,21 +525,20 @@ pre {
 </section>
   </div>
   <div class="slide hidden" id="slide-5">
-    <section class="slide-content"><h3 id="example">Example</h3>
+    <section class="slide-content"><h3 id="-example-http-plnkr-co-edit-umtqzywbhjhbeqeglptg-p-preview-"><a href="http://plnkr.co/edit/umTqZywBhjhBEQeGLpTg?p=preview">Example</a></h3>
 <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">ng-app</span>=<span class="hljs-string">"example"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://code.angularjs.org/1.4.8/angular.js"</span>&gt;</span><span class="undefined">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://code.angularjs.org/1.4.8/angular.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+      <span class="hljs-keyword">var</span> app = angular.module(<span class="hljs-string">'example'</span>, []);
+      app.controller(<span class="hljs-string">'MainCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($scope, $resource)</span> </span>{
+        $scope.name = <span class="hljs-string">'World'</span>;
+      });
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-    <span class="hljs-keyword">var</span> app = angular.module(<span class="hljs-string">'example'</span>, []);
-    app.controller(<span class="hljs-string">'MainCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($scope)</span> </span>{
-      $scope.name = <span class="hljs-string">'World'</span>;
-    });
-  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">ng-controller</span>=<span class="hljs-string">"MainCtrl"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello {{name}}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ng-model</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello {{name | uppercase}}!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ng-model</span>=<span class="hljs-string">"name"</span>/&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 </section>
@@ -577,24 +575,83 @@ pre {
     get: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getService</span>(<span class="hljs-params">serviceName</span>)</span>{},
     has: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>)</span>{},
     instantiate: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">instantiate</span>(<span class="hljs-params">Type, locals</span>)</span>{},
-    invoke: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invoke</span>(<span class="hljs-params">fn, self, locals</span>)</span>{}
+    invoke: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">invoke</span>(<span class="hljs-params">fn, self, locals</span>)</span>{}<span class="hljs-number">321</span>
   }</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-9">
-    <section class="slide-content"></section>
+    <section class="slide-content"><h3 id="testability">Testability</h3>
+<pre><code class="lang-javascript">describe(<span class="hljs-string">'TDD'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  it(<span class="hljs-string">'Using Jasmine fraimwork with Karma runner'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    expect(<span class="hljs-string">'easy'</span>).toBe(<span class="hljs-literal">true</span>)
+  })
+});</code></pre>
+</section>
   </div>
-  <div class="slide hidden  " id="slide-10">
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h2 id="directives">Directives</h2>
+<h3 id="main-purpose-dom-manipulations">Main purpose: DOM manipulations</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="-example-http-plnkr-co-edit-umtqzywbhjhbeqeglptg-p-preview-"><a href="http://plnkr.co/edit/umTqZywBhjhBEQeGLpTg?p=preview">Example</a></h3>
+<pre><code class="lang-javascript">angular.module(<span class="hljs-string">'example'</span>).directive(<span class="hljs-string">'timeCounter'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    template: <span class="hljs-string">'&lt;h1&gt;{{minutes}}:{{seconds}}&lt;/h1&gt;'</span>,
+    scope: {
+      remainSeconds: <span class="hljs-string">'@'</span>
+    },
+    replace: <span class="hljs-literal">true</span>,
+    restrict: <span class="hljs-string">'E'</span>,
+    controller: <span class="hljs-string">'timeCoubterCtrl'</span>,
+    link: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">$scope, $element, $attrs</span>) </span>{}
+  };
+});</code></pre>
+<p><a href="https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/">Source</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h2 id="-built-in-directives-https-docs-angularjs-org-api-ng-directive-"><a href="https://docs.angularjs.org/api/ng/directive">Built-in Directives</a></h2>
+<ul>
+<li>ng-repeat</li>
+<li>ng-(click)</li>
+<li>ng-model</li>
+<li>ng-form</li>
+<li>ng-if</li>
+<li>ng-(disabled)</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h2 id="-built-in-services-https-docs-angularjs-org-api-ng-service-"><a href="https://docs.angularjs.org/api/ng/service">Built-in Services</a></h2>
+<ul>
+<li>$http </li>
+<li>$resource</li>
+<li>$window</li>
+<li>$timeout</li>
+<li>$parse</li>
+<li>$rootScope</li>
+<li>$filter</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h2 id="scope-and-digest">Scope and Digest</h2>
+</section>
+  </div>
+  <div class="slide hidden  " id="slide-15">
     <section class="slide-content"><h2 id="libraries">Libraries</h2>
 <ul>
+<li>ui-router</li>
 <li>ui-bootstrap</li>
 <li>rest-angular</li>
 <li>Angular Material</li>
 <li>ui-grid</li>
+<li>...</li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-11">
+  <div class="slide hidden" id="slide-16">
     <section class="slide-content"><h1 id="books">Books</h1>
 <ul>
 <li><a href="https://github.com/IgorMotorny/library/blob/master/dist/cfadbfe79292e08a0a31929c9f8ecb11.pdf">ng-book</a></li>
@@ -607,8 +664,9 @@ pre {
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-12">
-    <section class="slide-content"><h1 id="questions">Questions</h1>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h1 id="thank-you">Thank you</h1>
+<h2 id="questions">Questions</h2>
 </section>
   </div>
 

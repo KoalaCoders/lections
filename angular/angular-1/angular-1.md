@@ -5,12 +5,11 @@ controls: true
 # Angular 
 ## 1.x
 --
-# Lector
 ## Dmytro Rudnytskykh
 * Working at GlobalLogic
 * 3 years of experience Web Development
-* 1 year experience with AngularJS
-* Studied KPI. Now UCU, Data Science major
+* 1-year experience with AngularJS
+* Graduated KPI, FICT. Now studying UCU, Data Science major
 
 ##[VK](https://vk.com/rudnytskykh) [CV](http://rudnitskih.pp.ua)
 
@@ -31,22 +30,21 @@ controls: true
 - testability
 
 --
-### Example
+### [Example](http://plnkr.co/edit/umTqZywBhjhBEQeGLpTg?p=preview)
 ```html
 <html ng-app="example">
   <head>
-    <script src="http://code.angularjs.org/1.4.8/angular.js">
+    <script src="http://code.angularjs.org/1.4.8/angular.js"></script>
+    <script>
+      var app = angular.module('example', []);
+      app.controller('MainCtrl', function($scope, $resource) {
+        $scope.name = 'World';
+      });
     </script>
   </head>
-  <script>
-    var app = angular.module('example', []);
-    app.controller('MainCtrl', function($scope) {
-      $scope.name = 'World';
-    });
-  </script>
   <body ng-controller="MainCtrl">
-    <p>Hello {{name}}!</p>
-    <input ng-model="name"></input>
+    <p>Hello {{name | uppercase}}!</p>
+    <input ng-model="name"/>
   </body>
 </html>
 ```
@@ -84,20 +82,69 @@ angular.module('example')
     get: function getService(serviceName){},
     has: function(name){},
     instantiate: function instantiate(Type, locals){},
-    invoke: function invoke(fn, self, locals){}
+    invoke: function invoke(fn, self, locals){}321
   }
 ```
 --
+### Testability
+```javascript
+describe('TDD', function(){
+  it('Using Jasmine fraimwork with Karma runner', function(){
+    expect('easy').toBe(true)
+  })
+});
+```
+--
+## Directives
+### Main purpose: DOM manipulations
+--
+### [Example](http://plnkr.co/edit/umTqZywBhjhBEQeGLpTg?p=preview)
+```javascript
+angular.module('example').directive('timeCounter', function () {
+  return {
+    template: '<h1>{{minutes}}:{{seconds}}</h1>',
+    scope: {
+      remainSeconds: '@'
+    },
+    replace: true,
+    restrict: 'E',
+    controller: 'timeCoubterCtrl',
+    link: function ($scope, $element, $attrs) {}
+  };
+});
+```
+[Source](https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/)
 
+--
+## [Built-in Directives](https://docs.angularjs.org/api/ng/directive)
+* ng-repeat
+* ng-(click)
+* ng-model
+* ng-form
+* ng-if
+* ng-(disabled)
 
+--
+## [Built-in Services](https://docs.angularjs.org/api/ng/service)
+* $http 
+* $resource
+* $window
+* $timeout
+* $parse
+* $rootScope
+* $filter
 
+--
+## Scope and Digest
 
 -- 
 ## Libraries
+* ui-router
 * ui-bootstrap
 * rest-angular
 * Angular Material
 * ui-grid
+* ...
 --
 #Books
 * [ng-book](https://github.com/IgorMotorny/library/blob/master/dist/cfadbfe79292e08a0a31929c9f8ecb11.pdf)
@@ -109,4 +156,5 @@ angular.module('example')
 * google.com :)
 
 --
-#Questions
+# Thank you
+## Questions
