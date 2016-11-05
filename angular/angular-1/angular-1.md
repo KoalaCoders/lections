@@ -4,6 +4,10 @@ controls: true
 --
 # Angular 
 ## 1.x
+
+--
+![Let`s start](http://developer.telerik.com/wp-content/uploads/2015/12/64911692.jpg)
+
 --
 ## Dmytro Rudnytskykh
 * Working at GlobalLogic
