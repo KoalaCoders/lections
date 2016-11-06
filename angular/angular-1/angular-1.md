@@ -36,12 +36,16 @@ controls: true
 --
 ### [Example](http://plnkr.co/edit/umTqZywBhjhBEQeGLpTg?p=preview)
 ```html
+<!--ng-app - start of application: https://docs.angularjs.org/api/ng/directive/ngApp -->
 <html ng-app="example">
   <head>
     <script src="http://code.angularjs.org/1.4.8/angular.js"></script>
     <script>
+      // register module with no dependecies with the same name like in ng-app
       var app = angular.module('example', []);
-      app.controller('MainCtrl', function($scope, $resource) {
+      // register controller, inject $scope 
+      app.controller('MainCtrl', function($scope) {
+        // set default value on scope
         $scope.name = 'World';
       });
     </script>
@@ -56,8 +60,11 @@ controls: true
 --
 ### Two-way data binding
 ```html
+<!-- usage controller on element: https://docs.angularjs.org/api/ng/directive/ngController-->
 <body ng-controller="MainCtrl">
-  <p>Hello {{name}}!</p>
+  <!-- show user input and apply 'upperccase' filter -->
+  <p>Hello {{name | uppercase}}!</p>
+  <!-- save user input on $scope.name property: https://docs.angularjs.org/api/ng/directive/ngModel -->
   <input ng-model="name"></input>
 </body>
 ```
@@ -71,6 +78,7 @@ controls: true
 - filters
 
 ```javascript
+// example of usage ngResource: https://docs.angularjs.org/api/ngResource/service/$resource
 angular.module('example')
   .service('UserResource', function($resource) {
     return $resource.get('api/users'});
@@ -79,6 +87,7 @@ angular.module('example')
 --
 ### Dependency injection
 ```javascript
+  // https://docs.angularjs.org/api/auto/service/$injector
   console.log($injector);
 
   {
@@ -104,6 +113,7 @@ describe('TDD', function(){
 --
 ### [Example](http://plnkr.co/edit/umTqZywBhjhBEQeGLpTg?p=preview)
 ```javascript
+// check plunker example(link above) with full comments
 angular.module('example').directive('timeCounter', function () {
   return {
     template: '<h1>{{minutes}}:{{seconds}}</h1>',
