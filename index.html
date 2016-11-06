@@ -2,121 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Lections | KoalaCoders</title>
 </head>
 <body>
-  <style>
-    @import 'https://fonts.googleapis.com/css?family=Roboto';
+  <header class="header">
+      <h1 class="header__title">
+        <span class="header__hower">K</span>
+        <span class="header__hower">o</span>
+        <span class="header__hower">a</span>
+        <span class="header__hower">l</span>
+        <span class="header__hower">a</span>
+      </h1>
+      <h2 class="header__lections">Lections</h2>
+      <nav class="navigation">
+        <a class="navigation__item"
+           href="https://koalacoders.github.io/lections/"
+          translate="header.lections">
+        </a>
+        <a href="https://github.com/KoalaCoders">
+          <svg class="navigation__github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" fill="#fff"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"/></svg>
+        </a>
+      </nav>
+    </header>
 
-    * {
-      box-sizing: border-box;
-    }
+  <main class="grid">
 
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: #f0db4f;
-      color: #333;
-      font-family: 'Roboto', sans-serif;
-
-    }
-    a, a:hover, a:focus, a:visited  {
-      color: #333;
-      box-shadow: none;
-      border: none;
-      outline: none;
-      text-decoration: none;
-    }
-
-    .title {
-      text-align: center;
-      font-size: 50px;
-    }
-
-    .js-bg {
-      position: fixed;
-      bottom: -300px;
-      right: -30px;
-      font-size: 1200px;
-      font-weight: 900;
-      opacity: .1;
-      z-index: 0;
-    }
-
-    .grid {
-      z-index: 10;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 75vw;
-      margin: 50px auto;
-    }
+    <div class="grid__item">
+      <a href="./javascript/index.html" class="card">
+        <div class="card__header">
+          <img src="images/js.png" class="card__image">
+        </div>
+        <div class="card__info">
+          <div class="card__title">JavaScript</div>
+          <div class="card__description">
+            Some text about slides
+          </div>
+        </div>
+      </a>
+    </div>
 
 
+    <div class="grid__item">
+      <a href="./html/index.html" class="card">
+        <div class="card__header">
+          <img src="images/html.png" class="card__image">
+        </div>
+        <div class="card__info">
+          <div class="card__title">HTML</div>
+          <div class="card__description">
+            Some text about slides
+          </div>
 
-    .grid-item {
-      display: block;
-      z-index: 10;
-      flex-basis: 25vw;
-      height: 25vw;
-      flex-grow: 0;
-      flex-shrink: 0;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      transition: background-size .2s, font-size .2s;
-      background-size: 60%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-      text-align: center;
-      font-weight: 900;
-      cursor: pointer;
-    }
+        </div>
+      </a>
+    </div>
 
-    .grid-item.js {
-      background-size: 45%;
-    }
+    <div class="grid__item">
+      <a href="./css/index.html" class="card">
+        <div class="card__header">
+          <img src="images/css.png" class="card__image">
+        </div>
+        <div class="card__info">
+          <div class="card__title">CSS</div>
+          <div class="card__description">
+            Some text about slides
+          </div>
+        </div>
+      </a>
+    </div>
 
-    .grid-item:hover {
-      background-size: 80%;
-    }
+    <div class="grid__item">
+      <a href="./git/index.html" class="card">
+        <div class="card__header">
+          <img src="git/git.png" class="card__image">
+        </div>
+        <div class="card__info">
+          <div class="card__title">Git</div>
+          <div class="card__description">
+            Some text about slides
+          </div>
+          <!-- <div class="card__tags">
+            <a href="https://github.com/KoalaCoders/lections/tree/gh-pages/git" class="tag">
+              example
+            </a>
+          </div> -->
+        </div>
+      </a>
+    </div>
 
-  </style>
-  <h1 class="title">Lections</h1>
-  <div class="js-bg">JS</div>
-  <div class="grid">
-    <a
-      class="grid-item js"
-      style="background-image: url('./images/js.png');"
-      href="./javascript/index.html"
-    ></a>
-    <a
-      class="grid-item"
-      style="background-image: url('./images/html.png') "
-      href="./html/index.html"
-    ></a>
-    <a
-      class="grid-item"
-      style="background-image: url('./images/css.png') "
-      href="./css/index.html"
-    ></a>
-    <a
-      class="grid-item"
-      style="background-image: url('./git/git.png') "
-      href="./git/index.html"
-    ></a>
-    <a
-      class="grid-item"
-      style="background-image: url('./jquery/img/jquery.gif') "
-      href="./jquery/index.html"
-    ></a>
-  </div>
+    <div class="grid__item">
+      <a href="./jquery/index.html" class="card">
+        <div class="card__header">
+          <img src="jquery/img/jquery.gif" class="card__image">
+        </div>
+        <div class="card__info">
+          <div class="card__title">JQuey</div>
+          <div class="card__description">
+            Some text about slides
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="grid__item">
+      <a href="./angular/angular-1/angular-1-cleaver.html" class="card">
+        <div class="card__header">
+          <img src="images/angularjs.png" class="card__image">
+        </div>
+        <div class="card__info">
+          <div class="card__title">Angular</div>
+          <div class="card__description">
+            Some text about slides
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </main>
 </body>
 </html>
