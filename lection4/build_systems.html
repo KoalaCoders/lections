@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" id="theme" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night.min.css">-->
+
+    <!-- Printing and PDF exports -->
+    <style>
+        .reveal pre code {
+            max-height: 480px;
+        }
+    </style>
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Build systems</h1>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
+        </section>
+        <section>
+            <section>
+                <img width="900" src="img/build_systems.png" alt="">
+            </section>
+            <section>
+                <h2>disunited solutions</h2>
+                <ul>
+                    <li>jQuery, Knockout, Angular, Marionette, React</li>
+                    <li>Underscore, lodash, Lazy, ES6</li>
+                    <li>MVC, MVVM, Flux</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Different versions</h2>
+            </section>
+            <section>
+                <h2>Formats</h2>
+                <ul>
+                    <li>LESS, SCSS, SASS, Stylus — for styles.</li>
+                    <li>Handlebars, jade, EJS — for templates.</li>
+                    <li>JSON, JSON5, PJSON, XML — for data.</li>
+                    <li>CoffeeScript, JSX, ES6 — scripts and so on.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Local problems</h2>
+                <ul>
+                    <li>Growth of the project</li>
+                    <li>Dependency management</li>
+                    <li>Reloading the webpage</li>
+                    <li>Project state</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Solution</h1>
+                <img height="500" src="img/solution1.jpg" alt="">
+            </section>
+            <section>
+                <h1>The real one</h1>
+                <img src="img/buildSys1.jpg">
+            </section>
+            <section>
+                <h1>Webpack</h1>
+                <img src="img/webpack.png" data-state="img-right" style="background: white">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>But first about npm</h1>
+                <img src="img/npm-logo.svg" alt="" style="background: white">
+            </section>
+            <section>
+                <h1>What is npm?</h1>
+                <p>NPM - Node Package Manager</p>
+            </section>
+            <section>
+                <h1><code>package.json</code></h1>
+                <pre><code>{
+  "name": "canvas-project",
+  "version": "0.1.0",
+  "devDependencies": {
+    "canvas-chart": "~1.3.0"
+  }
+}</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Bower</h1>
+                <img src="img/bower-logo.svg" alt="" style="background: white">
+            </section>
+            <section>
+                <h2>Install Bower</h2>
+                <pre><code>npm install -g bower</code></pre>
+                <h2>Install package</h2>
+                <pre><code>$ bower install < package >
+# registered package
+$ bower install jquery</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Gulp - task runner</h1>
+                <img src="img/Gulp.png" alt="" style="background: white">
+            </section>
+            <section>
+                <h1>Why it's good?</h1>
+                <p><b>streaming</b> build system</p>
+            </section>
+            <section>
+                <h1>Config example</h1>
+                <pre><code>var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+
+// Линтинг файлов
+gulp.task('lint', function() {
+  gulp.src('./src/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+// Конкатенация и минификация файлов
+gulp.task('minify', function(){
+    gulp.src('./src/*.js')
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('./dist'))
+        .pipe(rename('all.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist'));
+});
+
+// Действия по умолчанию
+gulp.task('default', function(){
+  gulp.run('lint', 'minify');
+
+  // Отслеживаем изменения в файлах
+  gulp.watch("./src/*.js", function(event){
+    gulp.run('lint', 'minify');
+  });
+});</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>About webpack</h1>
+                <img width="1000" src="img/what-is-webpack.png" style="background: white">
+            </section>
+            <section>
+                <ul>
+                    <li>Code analyze</li>
+                    <li>Task runner</li>
+                    <li>Usage both npm and bower</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Config example</h1>
+                <pre><code>import webpack from 'webpack';
+import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
+const developmentEnvironment = 'development' ;
+const productionEnvironment = 'production';
+const testEnvironment = 'test';
+
+const getPlugins = function (env) {
+  const GLOBALS = {
+    'process.env.NODE_ENV': JSON.stringify(env),
+    __DEV__: env === developmentEnvironment
+  };
+
+  const plugins = [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.DefinePlugin(GLOBALS) //Tells React to build in prod mode. https://facebook.github.io/react/downloads.html
+  ];
+
+  switch (env) {
+    case productionEnvironment:
+      plugins.push(new ExtractTextPlugin('styles.css'));
+      plugins.push(new webpack.optimize.DedupePlugin());
+      plugins.push(new webpack.optimize.UglifyJsPlugin());
+      break;
+
+    case developmentEnvironment:
+      plugins.push(new webpack.HotModuleReplacementPlugin());
+      plugins.push(new webpack.NoErrorsPlugin());
+      break;
+  }
+
+  return plugins;
+};
+
+const getEntry = function (env) {
+  const entry = [];
+
+  if (env === developmentEnvironment ) { // only want hot reloading when in dev.
+    entry.push('webpack-hot-middleware/client');
+  }
+
+  entry.push('./src/index');
+
+  return entry;
+};
+
+const getLoaders = function (env) {
+  const loaders = [{ test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel', 'eslint'] }];
+
+  if (env === productionEnvironment ) {
+    // generate separate physical stylesheet for production build using ExtractTextPlugin. This provides separate caching and avoids a flash of unstyled content on load.
+    loaders.push({test: /(\.css|\.scss)$/, loader: ExtractTextPlugin.extract("css?sourceMap!sass?sourceMap")});
+  } else {
+    loaders.push({test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']});
+  }
+
+  return loaders;
+};
+
+function getConfig(env) {
+  return {
+    debug: true,
+    devtool: env === productionEnvironment  ? 'source-map' : 'cheap-module-eval-source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
+    noInfo: true, // set to false to see a list of every file being bundled.
+    entry: getEntry(env),
+    target: env === testEnvironment ? 'node' : 'web', // necessary per https://webpack.github.io/docs/testing.html#compile-and-test
+    output: {
+      path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
+      publicPath: '',
+      filename: 'bundle.js'
+    },
+    plugins: getPlugins(env),
+    module: {
+      loaders: getLoaders(env)
+    }
+  };
+}
+
+export default getConfig;</code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Good job!</h1>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>

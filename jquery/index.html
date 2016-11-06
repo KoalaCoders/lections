@@ -371,6 +371,11 @@ body {
   font-weight: 100;
 }
 
+.light {
+  color: #222;
+  background-color: #ddd;
+}
+
 h1 {
   text-transform: uppercase;
   text-align: center;
@@ -406,6 +411,10 @@ img {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.light .slide {
+  background-color: #ddd;
 }
 
 .slide-content {
@@ -738,6 +747,12 @@ function higlight(selector, color = "rgba(255, 255, 255, .5)") {
     el.style.background = color;
   });
 }
+
+window.addEventListener('keydown', (e) => {
+  if (e.keyCode != 9) return;
+
+  document.body.classList.toggle('light');
+});
 
   </script>
 </body>
