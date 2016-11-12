@@ -500,9 +500,278 @@ pre {
 </section>
   </div>
   <div class="slide hidden" id="slide-3">
-    <section class="slide-content"></section>
+    <section class="slide-content"><h2 id="web-components">Web components</h2>
+</section>
   </div>
-  <div class="slide hidden author-slide" id="slide-4">
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h2 id="custom-elements">Custom Elements</h2>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">myCustomElement</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HTMLElement</span> </span>{
+  createdCallback {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hi, I\'m custom element'</span>);
+  }
+}
+
+<span class="hljs-comment">/**
+* createdCallback
+* attachedCallback
+* detachedCallback
+* attributeChangedCallback(name, prevValue, newValue)
+*/</span>
+<span class="hljs-built_in">document</span>.registerElement(<span class="hljs-string">'my-element'</span>, {
+    prototype: myCustomElement,
+    extends: <span class="hljs-string">'div'</span>
+});</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h2 id="shadow-dom">Shadow dom</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"hello"</span>&gt;</span>Jho<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-keyword">const</span> el = hello.createShadowRoot();
+  el.innerHTML = <span class="hljs-string">"Hello, &lt;content&gt;&lt;/content&gt;"</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h2 id="templates">Templates</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"elem"</span>&gt;</span>
+  Доброе утро, страна!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tmpl"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">content</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">content</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Привет из подполья!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-built_in">document</span>.write(<span class="hljs-string">'...document.write:Новость!'</span>);
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+  <span class="hljs-keyword">var</span> root = elem.createShadowRoot();
+  root.appendChild(tmpl.content.cloneNode(<span class="hljs-literal">true</span>));
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h2 id="html-imports">Html imports</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"import"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://site.com/document.html"</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h2 id="typescript">TypeScript</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="-file-name-ts-"><code>file-name.ts</code></h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h2 id="types">Types</h2>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Object</li>
+<li>Array<elemType></li>
+<li>Any</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><pre><code class="lang-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeter</span>(<span class="hljs-params">person: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">string</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, "</span> + person;
+}
+
+<span class="hljs-keyword">var</span> user = [<span class="hljs-string">"Jho"</span>, <span class="hljs-string">"Jhon"</span>];
+
+<span class="hljs-built_in">document</span>.body.innerHTML = greeter(user);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><pre><code class="lang-typescript"><span class="hljs-keyword">interface</span> Person {
+    firstName: <span class="hljs-built_in">string</span>;
+    lastName: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeter</span>(<span class="hljs-params">person: Person</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, "</span> + person.firstName + <span class="hljs-string">" "</span> + person.lastName;
+}
+
+<span class="hljs-keyword">var</span> user = { firstName: <span class="hljs-string">"Jane"</span>, lastName: <span class="hljs-string">"User"</span> };
+
+<span class="hljs-built_in">document</span>.body.innerHTML = greeter(user);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><pre><code class="lang-typescript"><span class="hljs-keyword">class</span> Student {
+    fullName: <span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">constructor</span>(public firstName, public middleInitial, public lastName): void {
+        <span class="hljs-keyword">this</span>.fullName = firstName + <span class="hljs-string">" "</span> + middleInitial + <span class="hljs-string">" "</span> + lastName;
+    }
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h2 id="decorators">Decorators</h2>
+<pre><code class="lang-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sealed</span>(<span class="hljs-params">constructor: <span class="hljs-built_in">Function</span></span>) </span>{
+    <span class="hljs-built_in">Object</span>.seal(<span class="hljs-keyword">constructor</span>);
+    Object.seal(<span class="hljs-keyword">constructor</span>.prototype);
+}
+
+@sealed
+class Greeter {
+    greeting: <span class="hljs-built_in">string</span>;
+    <span class="hljs-keyword">constructor</span>(message: string) {
+        <span class="hljs-keyword">this</span>.greeting = message;
+    }
+    greet() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello, "</span> + <span class="hljs-keyword">this</span>.greeting;
+    }
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h2 id="rx-js">Rx.js</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>);
+Rx.Observable.fromEvent(button, <span class="hljs-string">'click'</span>)
+  .scan(count =&gt; count + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)
+  .subscribe(count =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Clicked <span class="hljs-subst">${count}</span> times`</span>));</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-keyword">var</span> observable = Rx.Observable.create(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">subscribe</span>(<span class="hljs-params">observer</span>) </span>{
+  <span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">var</span> id = setInterval(() =&gt; {
+    observer.next(counter++)
+  }, <span class="hljs-number">1000</span>);
+});
+
+observable.subscribe(<span class="hljs-built_in">console</span>.log);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-keyword">var</span> myObservable = <span class="hljs-keyword">new</span> Rx.Subject();
+myObservable.subscribe(<span class="hljs-built_in">console</span>.log);
+
+<span class="hljs-keyword">var</span> counter = <span class="hljs-number">0</span>;
+setInterval(() =&gt; {
+  myObservable.next(counter++);
+}, <span class="hljs-number">1000</span>);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h2 id="angular">Angular</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h2 id="components">Components</h2>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
+
+@Component({
+  selector: <span class="hljs-string">'my-app'</span>,
+  template: <span class="hljs-string">'&lt;h1&gt;Hello Angular!&lt;/h1&gt;'</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent { }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> { MyService } from <span class="hljs-string">'../MyService'</span>;
+<span class="hljs-keyword">import</span> { AnotherComponent } from <span class="hljs-string">'../another-component'</span>;
+
+@Component({
+  selector: <span class="hljs-string">'my-component'</span>,
+  templateUrl: <span class="hljs-string">'./my.component.html'</span>,
+  styleUrls: [<span class="hljs-string">'./my.component.scss'</span>],
+  directives: [AnotherComponent],
+  providers: [AnotherComponent]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyComponent {
+  <span class="hljs-keyword">constructor</span>(private googleMaps: GoogleMapsService) {}
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Component } from <span class="hljs-string">'@angular/core'</span>;
+
+@Component({
+  selector: <span class="hljs-string">'my-component'</span>,
+  template: <span class="hljs-string">`&lt;div&gt;{{text}}&lt;/div&gt;`</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> MyComponent {
+  text: <span class="hljs-built_in">string</span> = <span class="hljs-string">'MyComponent text'</span>
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h2 id="diresctives">Diresctives</h2>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> { Directive, ElementRef, Input, Renderer } from <span class="hljs-string">'@angular/core'</span>;
+
+@Directive({
+  selector: <span class="hljs-string">'[myHighlight]'</span>
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> HighlightDirective {
+    <span class="hljs-keyword">constructor</span>(el: ElementRef, renderer: Renderer) {
+       renderer.setElementStyle(el.nativeElement, <span class="hljs-string">'backgroundColor'</span>, <span class="hljs-string">'yellow'</span>);
+    }
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h2 id="services">Services</h2>
+<pre><code class="lang-ts">@Injectable()
+<span class="hljs-keyword">class</span> UsefulService { }</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h2 id="di">DI</h2>
+<pre><code class="lang-ts">@Injectable()
+<span class="hljs-keyword">class</span> UsefulService { }
+
+@Injectable()
+<span class="hljs-keyword">class</span> NeedsService {
+  <span class="hljs-keyword">constructor</span>(public service: UsefulService) {}
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><pre><code class="lang-ts">@Injectable()
+<span class="hljs-keyword">class</span> UsefulService {
+  <span class="hljs-keyword">constructor</span>(private http: Http) { }
+
+  retunData (name: <span class="hljs-built_in">string</span>): Observable {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.http.get(url);
+  }
+}
+
+@Injectable()
+<span class="hljs-keyword">class</span> NeedsService {
+  <span class="hljs-keyword">constructor</span>(public service: UsefulService) {}
+
+  getData() {
+    service.retunData().subscribe(<span class="hljs-built_in">console</span>.log);
+  }
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h2 id="cli">CLI</h2>
+<pre><code>$ sudo npm install -g angular-cli
+$ ng new PROJECT_NAME
+$ ng g component my-new-component
+$ ng g directive my-new-directive
+$ ng g pipe my-new-pipe
+$ ng g service my-new-service
+$ ng g class my-new-class
+$ ng g interface my-new-interface
+$ ng g enum my-new-enum
+$ ng g module my-module</code></pre>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-28">
     <section class="slide-content"><div class="author">
   <h1 class="name">Koala</h1>
     <h3 class="url">
