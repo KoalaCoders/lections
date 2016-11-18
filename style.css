@@ -89,6 +89,10 @@ body {
   font-size: 18px;
 }
 
+.navigation__item.active:before{
+  height: 7px;
+}
+
 .navigation__item:before {
   content: "";
   display: block;
