@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" id="theme" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night.min.css">-->
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/github.min.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>NodeJS</h1>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
+        </section>
+        <section>
+            <section>
+                <h1>About</h1>
+                <img height="500" src="img/nodejs.jpg" alt="">
+            </section>
+            <section>
+                <h1>Node is great</h1>
+                <pre>
+                    <code>
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h1>EventEmitter</h1>
+                <pre><code>
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+myEmitter.on('event', () => {
+  console.log('an event occurred!');
+});
+myEmitter.emit('event');
+                </code></pre>
+            </section>
+            <section>
+                <h1>Asynchronous NodeJS</h1>
+                <img height="300" src="img/async.jpg" alt="">
+            </section>
+            <section>
+                <h1>Multithreading</h1>
+                <img height="500" src="img/multithread.png" alt="" style="background-color: #ffffff">
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>V8</h1>
+                <img src="img/v8.PNG" alt="">
+            </section>
+            <section>
+                <h1>Garbage collection</h1>
+                <p>An object is considered garbage collectable if there is zero reference pointing at this object.</p>
+            </section>
+            <section>
+                <pre>
+                    <code>
+var user = {
+  name: "Вася"
+};
+user = null;
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <pre>
+                    <code>
+var vasya = {};
+var petya = {};
+vasya.friend = petya;
+petya.friend = vasya;
+
+vasya = petya = null;
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h1>Two types of garbage collection</h1>
+                <div>
+                    <ul>
+                        <li>Scavenge</li>
+                        <li>Mark-Sweep</li>
+                    </ul>
+                </div>
+                <img src="img/garbage.png" alt="">
+            </section>
+            <section>
+                <h1>Memory leaks</h1>
+                <img height="500" src="img/heap.png" alt="">
+            </section>
+            <section>
+                <h1>Solution</h1>
+                <p>Chrome Developer Tools</p>
+                <pre>
+                    <code>
+theThing = null
+                    </code>
+                </pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>About tools</h1>
+            </section>
+            <section>
+                <h1>Npm once more</h1>
+                <p>Node Package manager</p>
+            </section>
+            <section>
+                <h1>Express</h1>
+                <pre><code>
+var express = require('express');
+var app = express();
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+
+                </code></pre>
+            </section>
+            <section>
+                <h1>Express generator</h1>
+                <pre><code>express --view=jade myapp</code></pre>
+                <pre><code>
+├── app.js
+├── bin
+│   └── www
+├── package.json
+├── public
+│   ├── images
+│   ├── javascripts
+│   └── stylesheets
+│       └── style.css
+├── routes
+│   ├── index.js
+│   └── users.js
+└── views
+    ├── error.jade
+    ├── index.jade
+    └── layout.jade
+
+7 directories, 9 files
+                </code></pre>
+            </section>
+            <section>
+                <h1>socket.io</h1>
+                <ul>
+                    <li>WebSocket</li>
+                    <li>Adobe Flash Socket</li>
+                    <li>AJAX long polling</li>
+                    <li>AJAX multipart streaming</li>
+                    <li>Forever Iframe</li>
+                    <li>JSONP Polling</li>
+                </ul>
+            </section>
+            <section>
+                <p>socket.io and Express</p>
+                <pre><code>
+var io = require('socket.io');
+var express = require('express');
+
+var app = express.createServer()
+var io = io.listen(app);
+
+app.listen(80);
+
+io.sockets.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+  socket.on('disconnect', function () {
+    console.log('user disconnected');
+  });
+});
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>MongoDB</h1>
+                <img src="img/mongo.png" alt="" style="background-color: #ffffff">
+            </section>
+            <section>
+                <h1>Mongoose</h1>
+                <pre><code>
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var Cat = mongoose.model('Cat', { name: String });
+
+var kitty = new Cat({ name: 'Zildjian' });
+kitty.save(function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('meow');
+  }
+});
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Electron</h1>
+                <img height="500" src="img/electron.png" alt="">
+            </section>
+            <section>
+                <h1>Example</h1>
+                <pre><code>
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
+const url = require('url')
+
+let win
+
+function createWindow () {
+  win = new BrowserWindow({width: 800, height: 600})
+
+  win.loadURL(url.format({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
+
+  win.webContents.openDevTools()
+
+  win.on('closed', () => {
+    win = null
+  })
+}
+
+app.on('ready', createWindow)
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+
+app.on('activate', () => {
+  if (win === null) {
+    createWindow()
+  }
+})
+                </code></pre>
+            </section>
+            <section>
+                <h1>Result</h1>
+                <img height="500" src="img/electron_app.jpg" alt=""></section>
+        </section>
+        <section>
+            <section>
+                <h1>Good job!</h1>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>

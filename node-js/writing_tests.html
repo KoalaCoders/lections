@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" id="theme" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night.min.css">-->
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/github.min.css">
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>JS Testing</h1>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a>
+            <a href="#"
+               onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a>
+        </section>
+        <section>
+            <section>
+                <img height="600" src="img/test_joke.jpg" alt="">
+            </section>
+            <section>
+                <ul>
+                    <li>Unit Testing</li>
+                    <li>Functional Testing</li>
+                    <li>Integration Testing</li>
+                </ul>
+            </section>
+            <section>
+                <h1>TDD and BDD</h1>
+                <img height="500" src="img/test_joke1.jpg" alt="">
+            </section>
+            <section>
+                <h1>TDD</h1>
+                <img height="500" src="img/tdd.png" alt="" style="background-color: #ffffff">
+            </section>
+            <section>
+                <h1>TDD example</h1>
+                <pre><code>
+module("User Info");
+
+test("main", function() {
+  equals(typeof(Application_Helper_UserInfo), "object", "Check object");
+
+  equals(Application_Helper_UserInfo.hasOwnProperty("getHTML"), true, "Check existing method getHTML");
+
+  equals(Application_Helper_UserInfo.hasOwnProperty("_getPhoto"), true, "Check existing private method _getPhoto");
+
+  equals(Application_Helper_UserInfo.hasOwnProperty("_getUsername"), true, "Check existing private method _getUsername");
+
+  equals(Application_Helper_UserInfo.hasOwnProperty("_getInfo"), true, "Check existing method _getInfo");
+
+});
+                </code></pre>
+            </section>
+            <section>
+                <h1>BDD example</h1>
+                <pre><code>
+describe('User', function() {
+  describe('#save()', function() {
+    it('should save without error', function(done) {
+      var user = new User('Luna');
+      user.save(function(err) {
+        if (err) done(err);
+        else done();
+      });
+    });
+  });
+});
+                </code></pre>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Testing tools</h1>
+                <ul>
+                    <li>QUnit</li>
+                    <li>Karma</li>
+                    <li>Jasmine</li>
+                    <li>PhantomJS</li>
+                    <li>Mocha + chai</li>
+                    <li>UnitJS</li>
+                    <li>....</li>
+                </ul>
+            </section>
+            <section>
+                <h1>Jasmine</h1>
+                <p>https://jasmine.github.io/edge/introduction</p>
+            </section>
+        </section>
+        <section>
+            <img src="img/test_joke2.PNG" alt="">
+        </section>
+        <section>
+            <h1>Well DONE!</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
