@@ -215,3 +215,38 @@ body {
 .tag:nth-child(3n+2) {
   background: rgb(254, 128, 151);
 }
+
+.footer {
+  background: #222;
+  height: 50px;
+  color: #ddd;
+  padding: 15px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.links {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: flex-start;
+}
+
+.links__icon {
+  height: 20px;
+  padding: 10px;
+  fill: #fff;
+  transition: .2s;
+}
+
+.links__icon:hover {
+  fill: #4BBBFA;
+}
